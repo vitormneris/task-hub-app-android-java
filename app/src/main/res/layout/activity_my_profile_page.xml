@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyProfilePage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:fontFamily="@font/lexend_medium"
+                android:gravity="center"
+                android:text="Meu Perfil"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Aqui-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/profileCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="540dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/main_card_shape"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+
+                                <TextView
+                                    android:id="@+id/profileLabel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="30dp"
+                                    android:fontFamily="@font/lexend_medium"
+                                    android:gravity="center"
+                                    android:paddingHorizontal="12dp"
+                                    android:paddingTop="6dp"
+                                    android:text="Meu Perfil"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp" />
+
+                                <ImageView
+                                    android:layout_width="120dp"
+                                    android:layout_height="120dp"
+                                    android:layout_gravity="center"
+                                    android:paddingHorizontal="20dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:src="@drawable/imgicon" />
+
+                                <TextView
+                                    android:id="@+id/txtMyUserName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/lexend"
+                                    android:gravity="left"
+                                    android:paddingHorizontal="12dp"
+                                    android:paddingTop="6dp"
+                                    android:text="Fabio Monte"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/txtMyUserAge"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/lexend"
+                                    android:gravity="left"
+                                    android:paddingHorizontal="12dp"
+                                    android:paddingTop="6dp"
+                                    android:text="22 Anos"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+
+
+                                <TextView
+                                    android:id="@+id/txtMyUserLocation"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/lexend"
+                                    android:gravity="left"
+                                    android:paddingHorizontal="12dp"
+                                    android:paddingTop="6dp"
+                                    android:layout_marginBottom="12dp"
+                                    android:text="São Paulo, Itaquera"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp" />
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/btnEditProfile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:background="@drawable/main_card_shape"
+                                    app:cardBackgroundColor="@color/blue"
+                                    app:cardCornerRadius="12dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtBtnEditProfile"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/lexend_medium"
+                                        android:gravity="center"
+                                        android:text="EDITAR PERFIL"
+                                        android:textColor="@color/white"
+                                        android:textSize="22sp" />
+
+                                </androidx.cardview.widget.CardView>
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/btnShowMyJobs"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:background="@drawable/main_card_shape"
+                                    app:cardBackgroundColor="@color/darkBlue"
+                                    app:cardCornerRadius="12dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtShowMyJobs"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/lexend_medium"
+                                        android:gravity="center"
+                                        android:text="Ver os jobs que criei"
+                                        android:textColor="@color/white"
+                                        android:textSize="18sp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/btnShowMyParticipatedJobs"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="30dp"
+                                    android:background="@drawable/main_card_shape"
+                                    app:cardBackgroundColor="@color/darkBlue"
+                                    app:cardCornerRadius="12dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:id="@+id/txtShowMyParticipatedJobs"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/lexend_medium"
+                                        android:gravity="center"
+                                        android:text="Ver os jobs que participei"
+                                        android:textColor="@color/white"
+                                        android:textSize="18sp" />
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </LinearLayout>
+
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:fontFamily="@font/lexend_medium"
+                android:gravity="center"
+                android:text="navbar"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

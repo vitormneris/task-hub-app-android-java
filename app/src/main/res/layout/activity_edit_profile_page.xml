@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfilePage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:fontFamily="@font/lexend_medium"
+                android:gravity="center"
+                android:text="Meu Perfil - Editar"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--Aqui-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/profileCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="740dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/main_card_shape"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+
+                            <TextView
+                                android:id="@+id/profileLabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="30dp"
+                                android:fontFamily="@font/lexend_medium"
+                                android:gravity="center"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:text="Editar Meu Perfil"
+                                android:textColor="@color/black"
+                                android:textSize="24sp" />
+
+                            <ImageView
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center"
+                                android:paddingHorizontal="20dp"
+                                android:layout_marginBottom="12dp"
+                                android:src="@drawable/imgicon" />
+
+                            <TextView
+                                android:id="@+id/txtName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:gravity="left"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:text="Nome:"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/edtName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:layout_marginBottom="10dp"
+                                android:ems="10"
+                                android:hint="Usuario da Silva"
+                                android:inputType="text" />
+
+                            <TextView
+                                android:id="@+id/txtEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:gravity="left"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:text="Email:"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/edtEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:layout_marginBottom="10dp"
+                                android:ems="10"
+                                android:hint="email@email.com"
+                                android:inputType="textEmailAddress" />
+                            <TextView
+                                android:id="@+id/txtTelephone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:gravity="left"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:text="Celular:"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/edtTelephone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:layout_marginBottom="10dp"
+                                android:ems="10"
+                                android:hint="5511912345678"
+                                android:inputType="textEmailAddress" />
+
+                            <TextView
+                                android:id="@+id/txtAge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:gravity="left"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:text="Idade:"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/edtAge"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:layout_marginBottom="10dp"
+                                android:ems="10"
+                                android:hint="22"
+                                android:inputType="number" />
+
+                            <TextView
+                                android:id="@+id/txtLocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:gravity="left"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:text="Endereço:"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <EditText
+                                android:id="@+id/edtLocation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp"
+                                android:layout_marginBottom="10dp"
+                                android:ems="10"
+                                android:hint="São Paulo, Itaquera"
+                                android:inputType="text" />
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/btnSaveChanges"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:layout_margin="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="30dp"
+                                android:background="@drawable/main_card_shape"
+                                app:cardBackgroundColor="@color/blue"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <TextView
+                                    android:id="@+id/txtBtnSaveChanges"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/lexend_medium"
+                                    android:gravity="center"
+                                    android:text="SALVAR ALTERAÇÕES"
+                                    android:textColor="@color/white"
+                                    android:textSize="22sp" />
+
+                            </androidx.cardview.widget.CardView>
+
+
+
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+
+            </ScrollView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
