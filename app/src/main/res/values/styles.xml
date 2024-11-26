@@ -3,4 +3,12 @@
     <style name="Button">
         <item name="android:background">@drawable/main_card_shape</item>
     </style>
+
+    <style name="RectangleBorder">
+        <item name="android:background">@drawable/rectangle_border</item>
+    </style>
+
+    <style name="MainCardShape">
+        <item name="android:background">@drawable/main_card_shape</item>
+    </style>
 </resources>
