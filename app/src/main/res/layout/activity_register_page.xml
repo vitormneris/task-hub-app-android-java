@@ -63,7 +63,7 @@
                         android:gravity="center"
                         android:paddingHorizontal="12dp"
                         android:paddingTop="6dp"
-                        android:text="Cadastro"
+                        android:text="Cadastre-se"
                         android:layout_marginBottom="30dp"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
@@ -89,7 +89,7 @@
                         android:paddingTop="6dp"
                         android:layout_marginBottom="10dp"
                         android:ems="10"
-                        android:hint="Usuario da Silva"
+                        android:hint="Fulano da Silva"
                         android:inputType="text" />
                     <TextView
                         android:id="@+id/txtEmail"
@@ -99,7 +99,7 @@
                         android:gravity="left"
                         android:paddingHorizontal="12dp"
                         android:paddingTop="6dp"
-                        android:text="Email:"
+                        android:text="E-mail:"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
@@ -112,7 +112,7 @@
                         android:paddingTop="6dp"
                         android:layout_marginBottom="10dp"
                         android:ems="10"
-                        android:hint="email@email.com"
+                        android:hint="meuemail@email.com"
                         android:inputType="text" />
 
                     <TextView
@@ -138,6 +138,7 @@
                         android:ems="10"
                         android:hint="********"
                         android:inputType="textPassword" />
+
                     <TextView
                         android:id="@+id/txtTelephone"
                         android:layout_width="match_parent"
@@ -162,55 +163,43 @@
                         android:hint="5511912345678"
                         android:inputType="phone" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/btnEntrar"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSignUp"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/main_card_shape"
-                        app:cardBackgroundColor="@color/blue"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="0dp">
+                        android:text="CADASTRAR"
+                        android:enabled="false"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:fontFamily="@font/lexend_medium"
+                        android:background="@drawable/button_selector" />
 
-                        <TextView
-                            android:id="@+id/txtBtnLogin"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/lexend_medium"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="CADASTRAR"
-                            android:textColor="@color/white"
-                            android:textSize="22sp" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/btnToCadastro"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnToLogin"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_margin="10dp"
-                        android:background="@drawable/main_card_shape"
-                        app:cardBackgroundColor="@color/darkBlue"
-                        app:cardCornerRadius="12dp"
-                        app:cardElevation="0dp">
+                        android:text="Já possui uma conta? fazer login"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/lexend_medium"
+                        android:backgroundTint="@color/darkBlue"
+                        style="@style/Button"/>
 
-                        <TextView
-                            android:id="@+id/txtBtnToCadastro"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/lexend_medium"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="Já possui uma conta? fazer login"
-                            android:textColor="@color/white"
-                            android:textSize="14sp" />
-
-                    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/errorMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/lexend_medium"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textColor="@color/red"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
 
