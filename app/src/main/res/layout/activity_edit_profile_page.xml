@@ -238,31 +238,20 @@
                                 android:hint="São Paulo, Itaquera"
                                 android:inputType="text" />
 
-
-                            <androidx.cardview.widget.CardView
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnSaveChanges"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
+                                android:layout_marginBottom="10dp"
+                                android:layout_marginTop="20dp"
                                 android:layout_margin="10dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_marginBottom="30dp"
-                                android:background="@drawable/main_card_shape"
-                                app:cardBackgroundColor="@color/blue"
-                                app:cardCornerRadius="12dp"
-                                app:cardElevation="0dp">
+                                android:text="SALVAR ALTERAÇÕES"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:fontFamily="@font/lexend_medium"
+                                android:backgroundTint="@color/blue"
+                                style="@style/Button"/>
 
-                                <TextView
-                                    android:id="@+id/txtBtnSaveChanges"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:fontFamily="@font/lexend_medium"
-                                    android:gravity="center"
-                                    android:text="SALVAR ALTERAÇÕES"
-                                    android:textColor="@color/white"
-                                    android:textSize="22sp" />
-
-                            </androidx.cardview.widget.CardView>
 
 
 
