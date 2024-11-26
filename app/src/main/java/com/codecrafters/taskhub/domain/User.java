@@ -14,6 +14,10 @@ public class User {
     public User() {
     }
 
+    public User(String id) {
+        this.id = id;
+    }
+
     public User(String id, String name, String email, String phone, String password, Set<Job> jobsCreated, Set<Job> jobsSubscribed) {
         this.id = id;
         this.name = name;
@@ -78,5 +82,18 @@ public class User {
 
     public void setJobsSubscribed(Set<Job> jobsSubscribed) {
         this.jobsSubscribed = jobsSubscribed;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                ", jobsCreated=" + jobsCreated +
+                ", jobsSubscribed=" + jobsSubscribed +
+                '}';
     }
 }
