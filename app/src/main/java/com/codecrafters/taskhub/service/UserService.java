@@ -1,6 +1,7 @@
 package com.codecrafters.taskhub.service;
 
 import com.codecrafters.taskhub.domain.User;
+import com.codecrafters.taskhub.request.jobs.UpdateAvailableJobRequest;
 import com.codecrafters.taskhub.request.users.DeleteUserRequest;
 import com.codecrafters.taskhub.request.users.FindByEmailUserRequest;
 import com.codecrafters.taskhub.request.users.FindByIdUserRequest;

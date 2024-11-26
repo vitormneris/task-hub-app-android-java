@@ -10,14 +10,14 @@ public class Job {
     private String imageUrl;
     private Double payment;
     private Boolean available;
-    private Address address;
+    private String address;
     private User crafter;
     private Set<User> subscribers;
 
     public Job() {
     }
 
-    public Job(String id, String title, String moment, String details, String imageUrl, Double payment, Boolean available, Address address, User crafter) {
+    public Job(String id, String title, String moment, String details, String imageUrl, Double payment, Boolean available, String address, User crafter) {
         this.id = id;
         this.title = title;
         this.moment = moment;
@@ -85,11 +85,11 @@ public class Job {
         this.available = available;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
