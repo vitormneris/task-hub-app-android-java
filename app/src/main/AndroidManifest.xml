@@ -35,12 +35,6 @@
             android:name=".MyProfilePage"
             android:exported="false" />
         <activity
-            android:name=".ChatPage"
-            android:exported="false" />
-        <activity
-            android:name=".ChatList"
-            android:exported="false" />
-        <activity
             android:name=".JobPage"
             android:exported="false" />
         <activity
