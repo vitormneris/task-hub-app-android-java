@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 TextView available = playerView.findViewById(R.id.jobAvailable);
                 TextView jobSubscribedNumber = playerView.findViewById(R.id.jobSubscribedNumber);
 
-                name.setText(job.getTitle());
-                description.setText(job.getDetails());
+                name.setText("Título: " + job.getTitle());
+                description.setText("Descrição: " +job.getDetails());
                 price.setText("R$ " + job.getPayment());
                 date.setText("Data: " + job.getMoment());
-                local.setText(job.getAddress());
+                local.setText("Local: " + job.getAddress());
                 creafter.setText("Postado por: " + job.getCrafter().getName());
                 available.setText(job.getAvailable() ? "Disponível" : "Indisponível");
                 jobSubscribedNumber.setText("Numero de inscritos: "+job.getSubscribers().size());
