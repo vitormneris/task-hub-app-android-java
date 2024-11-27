@@ -266,8 +266,7 @@
                             android:textColor="@color/white"
                             android:textSize="20sp"
                             android:fontFamily="@font/lexend_medium"
-                            android:backgroundTint="@color/blue"
-                            style="@style/Button"/>
+                            android:background="@drawable/button_selector"/>
 
                     </LinearLayout>
 

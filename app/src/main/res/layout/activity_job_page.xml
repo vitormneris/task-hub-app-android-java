@@ -298,6 +298,7 @@
 
 
                         </androidx.cardview.widget.CardView>
+
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnContact"
                             android:layout_width="match_parent"
@@ -305,7 +306,7 @@
                             android:layout_marginBottom="10dp"
                             android:layout_marginTop="20dp"
                             android:layout_margin="10dp"
-                            android:text="ENTRAR EM CONTATO"
+                            android:text="Se inscrever"
                             android:textColor="@color/white"
                             android:textSize="20sp"
                             android:fontFamily="@font/lexend_medium"

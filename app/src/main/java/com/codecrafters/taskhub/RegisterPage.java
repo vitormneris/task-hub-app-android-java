@@ -34,7 +34,6 @@ public class RegisterPage extends AppCompatActivity {
         Button buttonLogin = findViewById(R.id.btnToLogin);
         buttonLogin.setOnClickListener((e) -> startActivity(new Intent(this, LoginPage.class)));
 
-
         UserService userService = new UserService();
         Button buttonSignUp = findViewById(R.id.btnSignUp);
 

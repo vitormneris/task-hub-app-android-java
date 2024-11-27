@@ -253,6 +253,7 @@
                             android:inputType="text"
                             android:paddingHorizontal="12dp"
                             android:paddingTop="6dp" />
+
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnAnunciar"
                             android:layout_width="match_parent"
@@ -262,10 +263,10 @@
                             android:layout_margin="10dp"
                             android:text="ANUNCIAR"
                             android:textColor="@color/white"
+                            android:enabled="false"
                             android:textSize="20sp"
                             android:fontFamily="@font/lexend_medium"
-                            android:backgroundTint="@color/blue"
-                            style="@style/Button"/>
+                            android:background="@drawable/button_selector"/>
 
 
                     </LinearLayout>

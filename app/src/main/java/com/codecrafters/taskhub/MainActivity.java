@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -35,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        String userId = getIntent().getStringExtra("userId");
+
         JobService jobService = new JobService();
         List<Job> jobList = jobService.findAll();
 
@@ -53,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
             TextView textView = playerView.findViewById(R.id.message);
             ImageView imageView = playerView.findViewById(R.id.image_error);
 
-            textView.setText("Não há eventos registrados, registre-os logo abaixo.");
-            textView.setTextColor(R.color.orange);
+            textView.setText("Ainda não há registros de trabalhos, você pode registrar logo abaixo ou  voltar novamente mais tarde!.");
             imageView.setImageResource(R.drawable.cara_feliz);
 
             layoutViewjob.addView(playerView);
@@ -68,19 +68,46 @@ public class MainActivity extends AppCompatActivity {
                 TextView date = playerView.findViewById(R.id.jobDate);
                 TextView creafter = playerView.findViewById(R.id.jobPostedBy);
                 TextView local = playerView.findViewById(R.id.jobLocation);
+                TextView available = playerView.findViewById(R.id.jobAvailable);
 
                 name.setText(job.getTitle());
                 description.setText(job.getDetails());
                 price.setText("R$ " + job.getPayment());
                 date.setText("Data: " + job.getMoment());
-                local.setText(job.getAddress().getCity() + "/" + job.getAddress().getNeighborhood());
+                local.setText(job.getAddress());
                 creafter.setText("Postado por: " + job.getCrafter().getName());
+                available.setText(job.getAvailable() ? "Disponível" : "Indisponível");
+
+                playerView.setOnClickListener((e) -> {
+                    Intent intent= new Intent(this, JobPage.class);
+                    intent.putExtra("userId", userId);
+                    intent.putExtra("jobId", job.getId());
+                    startActivity(intent);
+                });
 
                 layoutViewjob.addView(playerView);
             }
         }
 
-        CardView button = findViewById(R.id.announceBtn);
-        button.setOnClickListener((e) -> startActivity(new Intent(this, AnnouncePage.class)));
+        Button announceBtn = findViewById(R.id.announceBtn);
+        announceBtn.setOnClickListener((e) -> {
+            Intent intent= new Intent(this, AnnouncePage.class);
+            intent.putExtra("userId", userId);
+            startActivity(intent);
+        });
+
+        Button homeBtn = findViewById(R.id.homeBtn);
+        homeBtn.setOnClickListener((e) -> {
+            Intent intent= new Intent(this, MainActivity.class);
+            intent.putExtra("userId", userId);
+            startActivity(intent);
+        });
+
+        Button accountButton = findViewById(R.id.accountButton);
+        accountButton.setOnClickListener((e) -> {
+            Intent intent= new Intent(this, MyProfilePage.class);
+            intent.putExtra("userId", userId);
+            startActivity(intent);
+        });
     }
 }

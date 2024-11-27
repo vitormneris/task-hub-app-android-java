@@ -116,47 +116,38 @@
                                     android:layout_height="120dp"
                                     android:layout_gravity="center"
                                     android:paddingHorizontal="20dp"
-                                    android:layout_marginBottom="12dp"
                                     android:src="@drawable/imgicon" />
 
-                                <TextView
-                                    android:id="@+id/txtMyUserName"
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/lexend"
-                                    android:gravity="left"
-                                    android:paddingHorizontal="12dp"
-                                    android:paddingTop="6dp"
-                                    android:text="Fabio Monte"
-                                    android:textColor="@color/black"
-                                    android:textSize="18sp" />
+                                    android:paddingVertical="50px"
+                                    android:orientation="vertical">
 
-                                <TextView
-                                    android:id="@+id/txtMyUserAge"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/lexend"
-                                    android:gravity="left"
-                                    android:paddingHorizontal="12dp"
-                                    android:paddingTop="6dp"
-                                    android:text="22 Anos"
-                                    android:textColor="@color/black"
-                                    android:textSize="18sp" />
+                                    <TextView
+                                        android:id="@+id/txtUserName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/lexend"
+                                        android:gravity="left"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingTop="6dp"
+                                        android:text="João Vitor Moreira"
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp" />
 
-
-
-                                <TextView
-                                    android:id="@+id/txtMyUserLocation"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/lexend"
-                                    android:gravity="left"
-                                    android:paddingHorizontal="12dp"
-                                    android:paddingTop="6dp"
-                                    android:layout_marginBottom="12dp"
-                                    android:text="São Paulo, Itaquera"
-                                    android:textColor="@color/black"
-                                    android:textSize="18sp" />
+                                    <TextView
+                                        android:id="@+id/txtUserEmail"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/lexend"
+                                        android:gravity="left"
+                                        android:paddingHorizontal="12dp"
+                                        android:paddingTop="6dp"
+                                        android:text="email@gmail.com"
+                                        android:textColor="@color/black"
+                                        android:textSize="18sp" />
+                                </LinearLayout>
 
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/btnEditProfile"
@@ -172,33 +163,52 @@
                                     android:backgroundTint="@color/blue"
                                     style="@style/Button"/>
 
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnShowMyJobs"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:padding="10dp"
+                                        android:layout_margin="10dp"
+                                        android:text="Jobs que criei"
+                                        android:textColor="@color/white"
+                                        android:textSize="18sp"
+                                        android:fontFamily="@font/lexend_medium"
+                                        android:backgroundTint="@color/darkBlue"
+                                        style="@style/Button"/>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnShowMyParticipatedJobs"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="80"
+                                        android:padding="10dp"
+                                        android:layout_margin="10dp"
+                                        android:text="Jobs que me inscrevi"
+                                        android:textColor="@color/white"
+                                        android:textSize="18sp"
+                                        android:fontFamily="@font/lexend_medium"
+                                        android:backgroundTint="@color/darkBlue"
+                                        style="@style/Button"/>
+                                </LinearLayout>
 
                                 <androidx.appcompat.widget.AppCompatButton
-                                    android:id="@+id/btnShowMyJobs"
-                                    android:layout_width="match_parent"
+                                    android:id="@+id/btnDeleteAccount"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="50dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:layout_marginTop="20dp"
+                                    android:padding="10dp"
                                     android:layout_margin="10dp"
-                                    android:text="Ver os jobs que criei"
+                                    android:text="Deletar perfil"
+                                    android:layout_gravity="center"
                                     android:textColor="@color/white"
                                     android:textSize="18sp"
                                     android:fontFamily="@font/lexend_medium"
-                                    android:backgroundTint="@color/darkBlue"
-                                    style="@style/Button"/>
-
-                                <androidx.appcompat.widget.AppCompatButton
-                                    android:id="@+id/btnShowMyParticipatedJobs"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:layout_marginBottom="10dp"
-                                    android:layout_marginTop="20dp"
-                                    android:layout_margin="10dp"
-                                    android:text="Ver os jobs que participei"
-                                    android:textColor="@color/white"
-                                    android:textSize="18sp"
-                                    android:fontFamily="@font/lexend_medium"
-                                    android:backgroundTint="@color/darkBlue"
+                                    android:backgroundTint="@color/red"
                                     style="@style/Button"/>
 
                             </LinearLayout>

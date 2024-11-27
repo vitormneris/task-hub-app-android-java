@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:orientation="vertical"
         style="@style/MainCardShape">
 
         <LinearLayout
@@ -83,7 +84,6 @@
                     android:text="São Paulo, Itaquera"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
-
                 <TextView
                     android:id="@+id/jobPostedBy"
                     android:layout_width="match_parent"
@@ -104,11 +104,61 @@
                     android:text="Disponível"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
+
             </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAvailable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                android:text="Atualizar disponibilidade"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:fontFamily="@font/lexend_medium"
+                android:backgroundTint="@color/yellow"
+                style="@style/Button"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:layout_margin="15dp"
+                android:text="Deletar trabalho"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:fontFamily="@font/lexend_medium"
+                android:backgroundTint="@color/red"
+                style="@style/Button"/>
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend"
+            android:padding="5dp"
+            android:text="Inscritos:"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15sp" />
 
+        <LinearLayout
+            android:id="@+id/listViewUsers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>
