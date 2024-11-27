@@ -240,7 +240,7 @@ public class EditJob extends AppCompatActivity {
                         if (jobService.update(jobId, jobNew)) Toast.makeText(getApplicationContext(), "Trabalho atualizado com sucesso!", Toast.LENGTH_LONG).show();
                         else Toast.makeText(getApplicationContext(), "Não há conexão com a internet!", Toast.LENGTH_LONG).show();
 
-                        Intent intent = new Intent(EditJob.this, MainActivity.class);
+                        Intent intent = new Intent(EditJob.this, MyJobs.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("userId", userId);
                         startActivity(intent);
