@@ -58,15 +58,21 @@ public class JobPage extends AppCompatActivity {
 
         Button button = findViewById(R.id.btnContact);
         button.setOnClickListener((e) -> {
-            UserService userService = new UserService();
-            String result = userService.subscribe(userId, jobId);
+            if (job.getCrafter().getId().equals(userId)) {
+                Toast.makeText(getApplicationContext(), "Não pode se inscrever no seu próprio trabalho!", Toast.LENGTH_LONG).show();
+            } else {
+                UserService userService = new UserService();
+                String result = userService.subscribe(userId, jobId);
 
-            if (result.equals("true")) {
-                Toast.makeText(getApplicationContext(), "Inscrito com sucesso!", Toast.LENGTH_LONG).show();
+                if (result.equals("true")) {
+                    Toast.makeText(getApplicationContext(), "Inscrito com sucesso!", Toast.LENGTH_LONG).show();
+                } else if (result.equals("false"))
+                    Toast.makeText(getApplicationContext(), "Não há conexão com a internet!", Toast.LENGTH_LONG).show();
+                else if (result.equals("conflict"))
+                    Toast.makeText(getApplicationContext(), "Você já está inscrito neste trabalho", Toast.LENGTH_LONG).show();
+
             }
-            else if (result.equals("false")) Toast.makeText(getApplicationContext(), "Não há conexão com a internet!", Toast.LENGTH_LONG).show();
-            else if (result.equals("conflict")) Toast.makeText(getApplicationContext(), "Você já está inscrito neste trabalho", Toast.LENGTH_LONG).show();
-            });
+        });
 
         Button announceBtn = findViewById(R.id.announceBtn);
         announceBtn.setOnClickListener((e) -> {

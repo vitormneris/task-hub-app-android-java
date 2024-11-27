@@ -197,6 +197,10 @@
                                         android:backgroundTint="@color/darkBlue"
                                         style="@style/Button"/>
                                 </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <androidx.appcompat.widget.AppCompatButton
                                     android:id="@+id/btnDeleteAccount"
@@ -211,6 +215,22 @@
                                     android:fontFamily="@font/lexend_medium"
                                     android:backgroundTint="@color/red"
                                     style="@style/Button"/>
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/btnLogOut"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:padding="10dp"
+                                    android:layout_margin="10dp"
+                                    android:text="Deslogar"
+                                    android:layout_gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:fontFamily="@font/lexend_medium"
+                                    android:backgroundTint="@color/yellow"
+                                    style="@style/Button"/>
+
+                            </LinearLayout>
 
                             </LinearLayout>
 

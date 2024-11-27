@@ -96,5 +96,17 @@ public class MyProfilePage extends AppCompatActivity {
             intent.putExtra("userId", userId);
             startActivity(intent);
         });
+
+        Button btnLogOut = findViewById(R.id.btnLogOut);
+        btnLogOut.setOnClickListener((e) -> {
+            count++;
+            if (count < 2) {
+                Toast.makeText(getApplicationContext(), "Clique mais uma vez para deslogar sua conta", Toast.LENGTH_LONG).show();
+            } else {
+                Intent intent = new Intent(this, LoginPage.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+        });
     }
 }
