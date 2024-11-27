@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:orientation="vertical"
         style="@style/MainCardShape">
 
         <LinearLayout
@@ -96,19 +97,35 @@
                     android:textColor="@color/black"
                     android:textSize="15sp" />
 
-                <TextView
-                    android:id="@+id/jobAvailable"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
-                    android:padding="12dp"
-                    android:text="Disponível"
-                    android:textColor="@color/black"
-                    android:textSize="15sp" />
             </LinearLayout>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/jobSubscribedNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:padding="12dp"
+                android:text="Numero de inscritos:"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/jobAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend"
+                android:padding="12dp"
+                android:text="Disponível"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
 
     </LinearLayout>
 

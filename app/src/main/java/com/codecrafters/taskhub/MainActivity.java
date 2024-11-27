@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView creafter = playerView.findViewById(R.id.jobPostedBy);
                 TextView local = playerView.findViewById(R.id.jobLocation);
                 TextView available = playerView.findViewById(R.id.jobAvailable);
+                TextView jobSubscribedNumber = playerView.findViewById(R.id.jobSubscribedNumber);
 
                 name.setText(job.getTitle());
                 description.setText(job.getDetails());
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 local.setText(job.getAddress());
                 creafter.setText("Postado por: " + job.getCrafter().getName());
                 available.setText(job.getAvailable() ? "Disponível" : "Indisponível");
+                jobSubscribedNumber.setText("Numero de inscritos: "+job.getSubscribers().size());
                 Picasso.get().load(job.getImageUrl()).into(imageJob);
 
                 playerView.setOnClickListener((e) -> {
