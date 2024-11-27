@@ -119,17 +119,21 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
+
                     <EditText
                         android:id="@+id/edtName"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:fontFamily="@font/lexend"
-                        android:paddingHorizontal="12dp"
+                        android:paddingStart="16dp"
                         android:paddingTop="6dp"
-                        android:layout_marginBottom="10dp"
+                        android:paddingBottom="6dp"
                         android:ems="10"
                         android:hint="Fulano da Silva"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="#CEC2C2"
+                        style="@style/MainInputShape"/>
                     <TextView
                         android:id="@+id/txtEmail"
                         android:layout_width="match_parent"
@@ -145,14 +149,18 @@
                     <EditText
                         android:id="@+id/edtEmail"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:fontFamily="@font/lexend"
-                        android:paddingHorizontal="12dp"
+                        android:paddingStart="16dp"
                         android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
                         android:layout_marginBottom="10dp"
                         android:ems="10"
                         android:hint="meuemail@email.com"
-                        android:inputType="text" />
+                        android:inputType="text"
+                        android:textColor="@color/black"
+                        android:textColorHint="#CEC2C2"
+                        style="@style/MainInputShape"/>
 
                     <TextView
                         android:id="@+id/txtPassword"
@@ -169,14 +177,18 @@
                     <EditText
                         android:id="@+id/edtPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:fontFamily="@font/lexend"
-                        android:paddingHorizontal="12dp"
+                        android:paddingStart="16dp"
                         android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
                         android:layout_marginBottom="10dp"
                         android:ems="10"
                         android:hint="********"
-                        android:inputType="textPassword" />
+                        android:inputType="textPassword"
+                        android:textColor="@color/black"
+                        android:textColorHint="#CEC2C2"
+                        style="@style/MainInputShape"/>
 
                     <TextView
                         android:id="@+id/txtTelephone"
@@ -193,14 +205,18 @@
                     <EditText
                         android:id="@+id/edtTelephone"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:fontFamily="@font/lexend"
-                        android:paddingHorizontal="12dp"
+                        android:paddingStart="16dp"
                         android:paddingTop="6dp"
+                        android:paddingBottom="6dp"
                         android:layout_marginBottom="10dp"
                         android:ems="10"
                         android:hint="5511912345678"
-                        android:inputType="phone" />
+                        android:inputType="phone"
+                        android:textColor="@color/black"
+                        android:textColorHint="#CEC2C2"
+                        style="@style/MainInputShape" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnSignUp"

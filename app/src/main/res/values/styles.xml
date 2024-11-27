@@ -11,4 +11,7 @@
     <style name="MainCardShape">
         <item name="android:background">@drawable/main_card_shape</item>
     </style>
+    <style name="MainInputShape">
+        <item name="android:background">@drawable/input_shape</item>
+    </style>
 </resources>

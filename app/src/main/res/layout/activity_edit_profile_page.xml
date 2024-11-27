@@ -133,17 +133,23 @@
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
+
+
                             <EditText
                                 android:id="@+id/edtName"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="40dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
                                 android:fontFamily="@font/lexend"
                                 android:hint="Usuario da Silva"
                                 android:inputType="text"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp" />
+                                android:paddingStart="16dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#CEC2C2"
+                                style="@style/MainInputShape" />
 
                             <TextView
                                 android:id="@+id/txtEmail"
@@ -160,14 +166,18 @@
                             <EditText
                                 android:id="@+id/edtEmail"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="40dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
                                 android:fontFamily="@font/lexend"
                                 android:hint="email@email.com"
                                 android:inputType="textEmailAddress"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp" />
+                                android:paddingStart="16dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#CEC2C2"
+                                style="@style/MainInputShape" />
 
                             <TextView
                                 android:id="@+id/txtTelephone"
@@ -184,14 +194,18 @@
                             <EditText
                                 android:id="@+id/edtTelephone"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="40dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
                                 android:fontFamily="@font/lexend"
                                 android:hint="5511912345678"
                                 android:inputType="textEmailAddress"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp" />
+                                android:paddingStart="16dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#CEC2C2"
+                                style="@style/MainInputShape" />
 
                             <TextView
                                 android:id="@+id/txtPassword"
@@ -208,14 +222,18 @@
                             <EditText
                                 android:id="@+id/edtPassword"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="40dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
                                 android:fontFamily="@font/lexend"
                                 android:hint="********"
                                 android:inputType="text"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp" />
+                                android:paddingStart="16dp"
+                                android:paddingTop="6dp"
+                                android:paddingBottom="6dp"
+                                android:textColor="@color/black"
+                                android:textColorHint="#CEC2C2"
+                                style="@style/MainInputShape" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnSaveChanges"
