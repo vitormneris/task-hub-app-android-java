@@ -96,12 +96,13 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/jobDetailsCard"
                     android:layout_width="match_parent"
-                    android:layout_height="740dp"
+                    android:layout_height="700dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/main_card_shape"
                     app:cardBackgroundColor="@color/white"
@@ -133,6 +134,7 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_gravity="center"
+                            android:layout_marginBottom="10dp"
                             android:paddingHorizontal="20dp"
                             android:src="@drawable/imgicon" />
 
@@ -140,15 +142,14 @@
                             android:id="@+id/txtTitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/lexend"
                             android:gravity="left"
                             android:paddingHorizontal="12dp"
                             android:paddingTop="6dp"
-                            android:layout_marginBottom="10dp"
                             android:text="Titulo da tarefa"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
-
 
 
                         <TextView
@@ -162,34 +163,33 @@
                             android:text="Descrição:"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
+
                         <TextView
                             android:id="@+id/txtDescription"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/lexend"
                             android:gravity="left"
                             android:paddingHorizontal="12dp"
                             android:paddingTop="6dp"
-                            android:layout_marginBottom="10dp"
                             android:text="Descrição da tarefa vai aqui, um campo de texto para exibir tudo"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
-
 
 
                         <TextView
                             android:id="@+id/txtPrice"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/lexend"
                             android:gravity="left"
                             android:paddingHorizontal="12dp"
                             android:paddingTop="6dp"
-                            android:layout_marginBottom="10dp"
                             android:text="Valor ofertado em R$: 50.00"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
-
 
 
                         <TextView
@@ -203,15 +203,16 @@
                             android:text="Dia em que deverá ser realizada:"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
+
                         <TextView
                             android:id="@+id/txtDate"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/lexend"
                             android:gravity="left"
                             android:paddingHorizontal="12dp"
                             android:paddingTop="6dp"
-                            android:layout_marginBottom="10dp"
                             android:text="24/11/2024"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
@@ -228,15 +229,16 @@
                             android:text="Endereço do local:"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
+
                         <TextView
                             android:id="@+id/txtLocation"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
                             android:fontFamily="@font/lexend"
                             android:gravity="left"
                             android:paddingHorizontal="12dp"
                             android:paddingTop="6dp"
-                            android:layout_marginBottom="10dp"
                             android:text="São Paulo, Itaquera, Rua Dinamarca 123"
                             android:textColor="@color/black"
                             android:textSize="16sp" />
@@ -258,8 +260,8 @@
                             android:id="@+id/cardPostedBy"
                             android:layout_width="match_parent"
                             android:layout_height="70dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="4dp"
+                            android:layout_marginBottom="10dp"
                             android:background="@drawable/main_card_shape"
                             app:cardBackgroundColor="@color/white"
                             app:cardCornerRadius="12dp"
@@ -303,17 +305,17 @@
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnContact"
+                            style="@style/Button"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginTop="20dp"
                             android:layout_margin="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:backgroundTint="@color/blue"
+                            android:fontFamily="@font/lexend_medium"
                             android:text="Se inscrever"
                             android:textColor="@color/white"
-                            android:textSize="20sp"
-                            android:fontFamily="@font/lexend_medium"
-                            android:backgroundTint="@color/blue"
-                            style="@style/Button"/>
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 

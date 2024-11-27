@@ -79,12 +79,13 @@
                 <!--Aqui-->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="20dp">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/profileCard"
                         android:layout_width="match_parent"
-                        android:layout_height="740dp"
+                        android:layout_height="700dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/main_card_shape"
                         app:cardBackgroundColor="@color/white"
@@ -116,8 +117,8 @@
                                 android:layout_width="120dp"
                                 android:layout_height="120dp"
                                 android:layout_gravity="center"
-                                android:paddingHorizontal="20dp"
                                 android:layout_marginBottom="12dp"
+                                android:paddingHorizontal="20dp"
                                 android:src="@drawable/imgicon" />
 
                             <TextView
@@ -136,13 +137,13 @@
                                 android:id="@+id/edtName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/lexend"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
+                                android:fontFamily="@font/lexend"
                                 android:hint="Usuario da Silva"
-                                android:inputType="text" />
+                                android:inputType="text"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp" />
 
                             <TextView
                                 android:id="@+id/txtEmail"
@@ -160,13 +161,14 @@
                                 android:id="@+id/edtEmail"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/lexend"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
+                                android:fontFamily="@font/lexend"
                                 android:hint="email@email.com"
-                                android:inputType="textEmailAddress" />
+                                android:inputType="textEmailAddress"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp" />
+
                             <TextView
                                 android:id="@+id/txtTelephone"
                                 android:layout_width="match_parent"
@@ -183,13 +185,13 @@
                                 android:id="@+id/edtTelephone"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/lexend"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
+                                android:fontFamily="@font/lexend"
                                 android:hint="5511912345678"
-                                android:inputType="textEmailAddress" />
+                                android:inputType="textEmailAddress"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp" />
 
                             <TextView
                                 android:id="@+id/txtPassword"
@@ -207,34 +209,34 @@
                                 android:id="@+id/edtPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/lexend"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
+                                android:fontFamily="@font/lexend"
                                 android:hint="********"
-                                android:inputType="text" />
+                                android:inputType="text"
+                                android:paddingHorizontal="12dp"
+                                android:paddingTop="6dp" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnSaveChanges"
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
-                                android:layout_marginBottom="10dp"
-                                android:layout_marginTop="20dp"
                                 android:layout_margin="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/button_selector"
+                                android:fontFamily="@font/lexend_medium"
                                 android:text="SALVAR ALTERAÇÕES"
                                 android:textColor="@color/white"
-                                android:textSize="20sp"
-                                android:fontFamily="@font/lexend_medium"
-                                android:background="@drawable/button_selector"/>
+                                android:textSize="20sp" />
 
 
                             <TextView
                                 android:id="@+id/errorMessage"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:fontFamily="@font/lexend_medium"
                                 android:layout_gravity="center"
+                                android:fontFamily="@font/lexend_medium"
                                 android:gravity="center"
                                 android:textColor="@color/red"
                                 android:textSize="18sp" />
