@@ -43,6 +43,8 @@ public class JobPage extends AppCompatActivity {
         TextView txtDate = findViewById(R.id.txtDate);
         TextView txtLocation = findViewById(R.id.txtLocation);
         TextView userName = findViewById(R.id.userName);
+        TextView jobAvailable = findViewById(R.id.jobAvailable);
+        TextView jobSubscribedNumber = findViewById(R.id.jobSubscribedNumber);
 
         JobService jobService = new JobService();
         Job job = jobService.findById(jobId);
@@ -55,6 +57,8 @@ public class JobPage extends AppCompatActivity {
         Picasso.get().load(job.getImageUrl()).into(imageJob);
         userName.setText(job.getCrafter().getName());
         Picasso.get().load(job.getCrafter().getImageUrl()).into(imageUser);
+        jobAvailable.setText(job.getAvailable() ? "Disponível" : "Indisponível");
+        jobSubscribedNumber.setText("Numero de inscritos: " + job.getSubscribers().size());
 
         Button button = findViewById(R.id.btnContact);
         button.setOnClickListener((e) -> {
@@ -66,6 +70,9 @@ public class JobPage extends AppCompatActivity {
 
                 if (result.equals("true")) {
                     Toast.makeText(getApplicationContext(), "Inscrito com sucesso!", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, JobPage.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 } else if (result.equals("false"))
                     Toast.makeText(getApplicationContext(), "Não há conexão com a internet!", Toast.LENGTH_LONG).show();
                 else if (result.equals("conflict"))

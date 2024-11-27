@@ -40,8 +40,8 @@ public class MyProfilePage extends AppCompatActivity {
         TextView txtUserName = findViewById(R.id.txtUserName);
         TextView txtUserEmail = findViewById(R.id.txtUserEmail);
 
-        txtUserName.setText(user.getName());
-        txtUserEmail.setText(user.getEmail());
+        txtUserName.setText("Nome: " + user.getName());
+        txtUserEmail.setText("E-mail: " + user.getEmail());
         Picasso.get().load(user.getImageUrl()).into(imageUser);
 
         Button btnEditProfile = findViewById(R.id.btnEditProfile);
