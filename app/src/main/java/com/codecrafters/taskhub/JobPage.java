@@ -3,6 +3,7 @@ package com.codecrafters.taskhub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import com.codecrafters.taskhub.domain.Job;
 import com.codecrafters.taskhub.domain.User;
 import com.codecrafters.taskhub.service.JobService;
 import com.codecrafters.taskhub.service.UserService;
+import com.squareup.picasso.Picasso;
 
 public class JobPage extends AppCompatActivity {
 
@@ -33,6 +35,8 @@ public class JobPage extends AppCompatActivity {
         String userId = getIntent().getStringExtra("userId");
         String jobId = getIntent().getStringExtra("jobId");
 
+        ImageView imageJob = findViewById(R.id.imageJob);
+        ImageView imageUser = findViewById(R.id.imageUser);
         TextView txtTitle = findViewById(R.id.txtTitle);
         TextView txtDescription = findViewById(R.id.txtDescription);
         TextView txtPrice = findViewById(R.id.txtPrice);
@@ -48,17 +52,21 @@ public class JobPage extends AppCompatActivity {
         txtPrice.setText("Valor ofertado em R$: " + job.getPayment());
         txtDate.setText(job.getMoment());
         txtLocation.setText(job.getAddress());
+        Picasso.get().load(job.getImageUrl()).into(imageJob);
         userName.setText(job.getCrafter().getName());
-
+        Picasso.get().load(job.getCrafter().getImageUrl()).into(imageUser);
 
         Button button = findViewById(R.id.btnContact);
         button.setOnClickListener((e) -> {
             UserService userService = new UserService();
-            if (userService.subscribe(userId, jobId)) {
-                Toast.makeText(getApplicationContext(), "Inscrito com sucesso!", Toast.LENGTH_LONG).show();
-            } else Toast.makeText(getApplicationContext(), "Sem internet!", Toast.LENGTH_LONG).show();
+            String result = userService.subscribe(userId, jobId);
 
-        });
+            if (result.equals("true")) {
+                Toast.makeText(getApplicationContext(), "Inscrito com sucesso!", Toast.LENGTH_LONG).show();
+            }
+            else if (result.equals("false")) Toast.makeText(getApplicationContext(), "Não há conexão com a internet!", Toast.LENGTH_LONG).show();
+            else if (result.equals("conflict")) Toast.makeText(getApplicationContext(), "Você já está inscrito neste trabalho", Toast.LENGTH_LONG).show();
+            });
 
         Button announceBtn = findViewById(R.id.announceBtn);
         announceBtn.setOnClickListener((e) -> {

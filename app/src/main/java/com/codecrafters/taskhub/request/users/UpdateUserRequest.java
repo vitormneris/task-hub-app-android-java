@@ -9,10 +9,10 @@ import java.io.PrintStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class UpdateUserRequest extends AsyncTask<String, Void, Boolean> {
+public class UpdateUserRequest extends AsyncTask<String, Void, String> {
 
     @Override
-    protected Boolean doInBackground(String... strings) {
+    protected String doInBackground(String... strings) {
         try {
             URL update = new URL("http://" + ConnectionFactory.SERVER_IP + ":8080/usuarios/" + strings[0] + "/atualizar");
             HttpURLConnection connection = (HttpURLConnection) update.openConnection();
@@ -22,11 +22,12 @@ public class UpdateUserRequest extends AsyncTask<String, Void, Boolean> {
             PrintStream printStream = new PrintStream(connection.getOutputStream());
             printStream.println(strings[1]);
             connection.connect();
+            if (connection.getResponseCode() == 409) return  "conflict";
 
-            if (connection.getResponseCode() == 200) return true;
+            if (connection.getResponseCode() == 200) return "true";
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return false;
+        return "false";
     }
 }

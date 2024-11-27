@@ -17,9 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.codecrafters.taskhub.domain.Job;
 import com.codecrafters.taskhub.service.JobService;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             for (Job job : jobList) {
                 View playerView = inflater.inflate(R.layout.layout_job, layoutViewjob, false);
 
+                ImageView imageJob = playerView.findViewById(R.id.imageJob);
                 TextView name = playerView.findViewById(R.id.jobName);
                 TextView description = playerView.findViewById(R.id.jobDescription);
                 TextView price = playerView.findViewById(R.id.jobPrice);
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 local.setText(job.getAddress());
                 creafter.setText("Postado por: " + job.getCrafter().getName());
                 available.setText(job.getAvailable() ? "Disponível" : "Indisponível");
+                Picasso.get().load(job.getImageUrl()).into(imageJob);
 
                 playerView.setOnClickListener((e) -> {
                     Intent intent= new Intent(this, JobPage.class);

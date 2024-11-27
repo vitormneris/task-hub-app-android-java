@@ -3,6 +3,7 @@ package com.codecrafters.taskhub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.codecrafters.taskhub.domain.User;
 import com.codecrafters.taskhub.service.UserService;
+import com.squareup.picasso.Picasso;
 
 public class MyProfilePage extends AppCompatActivity {
     private int count = 0;
@@ -34,11 +36,13 @@ public class MyProfilePage extends AppCompatActivity {
         UserService userService = new UserService();
         User user = userService.findById(userId);
 
+        ImageView imageUser = findViewById(R.id.imageUser);
         TextView txtUserName = findViewById(R.id.txtUserName);
         TextView txtUserEmail = findViewById(R.id.txtUserEmail);
 
         txtUserName.setText(user.getName());
         txtUserEmail.setText(user.getEmail());
+        Picasso.get().load(user.getImageUrl()).into(imageUser);
 
         Button btnEditProfile = findViewById(R.id.btnEditProfile);
         btnEditProfile.setOnClickListener((e) -> {

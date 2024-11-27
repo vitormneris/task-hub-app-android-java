@@ -30,6 +30,9 @@ android {
 
 dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'com.cloudinary:cloudinary-android:3.0.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
 
     implementation libs.appcompat
     implementation libs.material
