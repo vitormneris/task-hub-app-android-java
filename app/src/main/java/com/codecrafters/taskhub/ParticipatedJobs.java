@@ -19,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.codecrafters.taskhub.domain.Job;
 import com.codecrafters.taskhub.domain.User;
 import com.codecrafters.taskhub.service.UserService;
+import com.squareup.picasso.Picasso;
 
 import java.util.Set;
 
@@ -39,7 +40,6 @@ public class ParticipatedJobs extends AppCompatActivity {
 
         UserService userService = new UserService();
         User user = userService.findById(userId);
-        Set<Job> jobList = user.getJobsSubscribed();
 
         LayoutInflater inflater = LayoutInflater.from(this);
         LinearLayout layoutViewjob = findViewById(R.id.listViewJobs);
@@ -51,7 +51,7 @@ public class ParticipatedJobs extends AppCompatActivity {
             textView.setText("Não há conexão com a internet.");
 
             layoutViewjob.addView(playerView);
-        } else if (jobList.isEmpty()) {
+        } else if ( user.getJobsSubscribed().isEmpty()) {
             View playerView = inflater.inflate(R.layout.message_error, layoutViewjob, false);
             TextView textView = playerView.findViewById(R.id.message);
             ImageView imageView = playerView.findViewById(R.id.image_error);
@@ -61,9 +61,10 @@ public class ParticipatedJobs extends AppCompatActivity {
 
             layoutViewjob.addView(playerView);
         } else {
-            for (Job job : jobList) {
+            for (Job job :  user.getJobsSubscribed()) {
                 View playerView = inflater.inflate(R.layout.layout_job_participated, layoutViewjob, false);
 
+                ImageView imageJob = playerView.findViewById(R.id.imageJob);
                 TextView name = playerView.findViewById(R.id.jobName);
                 TextView description = playerView.findViewById(R.id.jobDescription);
                 TextView price = playerView.findViewById(R.id.jobPrice);
@@ -79,6 +80,7 @@ public class ParticipatedJobs extends AppCompatActivity {
                 local.setText(job.getAddress());
                 creafter.setText("Postado por: " + job.getCrafter().getName());
                 available.setText(job.getAvailable() ? "Disponível" : "Indisponível");
+                Picasso.get().load(job.getImageUrl()).into(imageJob);
 
                 playerView.setOnClickListener((e) -> {
                     Intent intent= new Intent(this, JobPage.class);

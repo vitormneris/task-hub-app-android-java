@@ -21,9 +21,7 @@ import com.codecrafters.taskhub.domain.Job;
 import com.codecrafters.taskhub.domain.User;
 import com.codecrafters.taskhub.service.JobService;
 import com.codecrafters.taskhub.service.UserService;
-
-import java.util.List;
-import java.util.Set;
+import com.squareup.picasso.Picasso;
 
 public class MyJobs extends AppCompatActivity {
     private int count = 0;
@@ -44,7 +42,6 @@ public class MyJobs extends AppCompatActivity {
         JobService jobService = new JobService();
         UserService userService = new UserService();
         User user = userService.findById(userId);
-        Set<Job> jobList = user.getJobsCreated();
 
         LayoutInflater inflater = LayoutInflater.from(this);
         LinearLayout layoutViewjob = findViewById(R.id.listViewJobs);
@@ -56,7 +53,7 @@ public class MyJobs extends AppCompatActivity {
             textView.setText("Não há conexão com a internet.");
 
             layoutViewjob.addView(playerView);
-        } else if (jobList.isEmpty()) {
+        } else if (user.getJobsCreated().isEmpty()) {
             View playerView = inflater.inflate(R.layout.message_error, layoutViewjob, false);
             TextView textView = playerView.findViewById(R.id.message);
             ImageView imageView = playerView.findViewById(R.id.image_error);
@@ -66,10 +63,11 @@ public class MyJobs extends AppCompatActivity {
 
             layoutViewjob.addView(playerView);
         } else {
-            for (Job job : jobList) {
+            for (Job job : user.getJobsCreated()) {
                 View cardView = inflater.inflate(R.layout.layout_my_job, layoutViewjob, false);
                 LinearLayout playerView = cardView.findViewById(R.id.listViewUsers);
 
+                ImageView imageJob = cardView.findViewById(R.id.imageJob);
                 TextView name = cardView.findViewById(R.id.jobName);
                 TextView description = cardView.findViewById(R.id.jobDescription);
                 TextView price = cardView.findViewById(R.id.jobPrice);
@@ -78,10 +76,12 @@ public class MyJobs extends AppCompatActivity {
                 TextView local = cardView.findViewById(R.id.jobLocation);
                 TextView available = cardView.findViewById(R.id.jobAvailable);
 
+
                 if (job.getSubscribers() != null) {
                     for (User subscribers : job.getSubscribers()) {
                         View layout_user = inflater.inflate(R.layout.layout_user, playerView, false);
 
+                        ImageView imageSub = layout_user.findViewById(R.id.imageUser);
                         TextView userName = layout_user.findViewById(R.id.userName);
                         TextView userEmail = layout_user.findViewById(R.id.userEmail);
                         TextView userPhone = layout_user.findViewById(R.id.userPhone);
@@ -89,7 +89,7 @@ public class MyJobs extends AppCompatActivity {
                         userName.setText(subscribers.getName());
                         userEmail.setText(subscribers.getEmail());
                         userPhone.setText(subscribers.getPhone());
-
+                        Picasso.get().load(subscribers.getImageUrl()).into(imageSub);
 
                         layout_user.setOnClickListener(v -> {
                             String url = "https://wa.me/" + subscribers.getPhone();
@@ -108,6 +108,7 @@ public class MyJobs extends AppCompatActivity {
                 local.setText(job.getAddress());
                 creafter.setText("Postado por: " + job.getCrafter().getName());
                 available.setText(job.getAvailable() ? "Disponível" : "Indisponível");
+                Picasso.get().load(job.getImageUrl()).into(imageJob);
 
                 cardView.setOnClickListener((e) -> {
                     Intent intent= new Intent(this, EditJob.class);

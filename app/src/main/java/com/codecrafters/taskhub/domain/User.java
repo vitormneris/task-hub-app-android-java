@@ -7,6 +7,7 @@ public class User {
     private String name;
     private String email;
     private String phone;
+    private String imageUrl;
     private String password;
     private Set<Job> jobsCreated;
     private Set<Job> jobsSubscribed;
@@ -18,14 +19,13 @@ public class User {
         this.id = id;
     }
 
-    public User(String id, String name, String email, String phone, String password, Set<Job> jobsCreated, Set<Job> jobsSubscribed) {
+    public User(String id, String name, String email, String phone, String imageUrl, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.imageUrl = imageUrl;
         this.password = password;
-        this.jobsCreated = jobsCreated;
-        this.jobsSubscribed = jobsSubscribed;
     }
 
     public String getId() {
@@ -60,6 +60,14 @@ public class User {
         this.phone = phone;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -91,6 +99,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
                 ", password='" + password + '\'' +
                 ", jobsCreated=" + jobsCreated +
                 ", jobsSubscribed=" + jobsSubscribed +

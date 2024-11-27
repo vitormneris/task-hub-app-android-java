@@ -67,7 +67,7 @@ public class UserService {
         return "false";
     }
 
-    public boolean update(String id, User user){
+    public String update(String id, User user){
         ObjectMapper objectMapper = new ObjectMapper();
 
         try {
@@ -76,17 +76,17 @@ public class UserService {
         } catch (ExecutionException | InterruptedException | JsonProcessingException e) {
             e.printStackTrace();
         }
-        return false;
+        return "false";
     }
 
-    public boolean subscribe(String userId, String jobId){
+    public String subscribe(String userId, String jobId){
         try {
             SubscribeUserRequest subscribeUserRequest = new SubscribeUserRequest();
             return subscribeUserRequest.execute(userId, jobId).get();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
-        return false;
+        return "false";
     }
 
     public boolean unsubscribe(String userId, String jobId){
