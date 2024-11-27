@@ -191,19 +191,19 @@
                                 android:inputType="textEmailAddress" />
 
                             <TextView
-                                android:id="@+id/txtAge"
+                                android:id="@+id/txtPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/lexend"
                                 android:gravity="left"
                                 android:paddingHorizontal="12dp"
                                 android:paddingTop="6dp"
-                                android:text="Idade:"
+                                android:text="Senha:"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
 
                             <EditText
-                                android:id="@+id/edtAge"
+                                android:id="@+id/edtPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/lexend"
@@ -211,31 +211,7 @@
                                 android:paddingTop="6dp"
                                 android:layout_marginBottom="10dp"
                                 android:ems="10"
-                                android:hint="22"
-                                android:inputType="number" />
-
-                            <TextView
-                                android:id="@+id/txtLocation"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/lexend"
-                                android:gravity="left"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp"
-                                android:text="Endereço:"
-                                android:textColor="@color/black"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/edtLocation"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/lexend"
-                                android:paddingHorizontal="12dp"
-                                android:paddingTop="6dp"
-                                android:layout_marginBottom="10dp"
-                                android:ems="10"
-                                android:hint="São Paulo, Itaquera"
+                                android:hint="********"
                                 android:inputType="text" />
 
                             <androidx.appcompat.widget.AppCompatButton
@@ -249,12 +225,18 @@
                                 android:textColor="@color/white"
                                 android:textSize="20sp"
                                 android:fontFamily="@font/lexend_medium"
-                                android:backgroundTint="@color/blue"
-                                style="@style/Button"/>
+                                android:background="@drawable/button_selector"/>
 
 
-
-
+                            <TextView
+                                android:id="@+id/errorMessage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/lexend_medium"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:textColor="@color/red"
+                                android:textSize="18sp" />
 
                         </LinearLayout>
 

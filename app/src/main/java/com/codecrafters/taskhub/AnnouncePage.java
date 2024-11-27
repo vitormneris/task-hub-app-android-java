@@ -17,8 +17,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.codecrafters.taskhub.domain.Job;
+import com.codecrafters.taskhub.domain.User;
 import com.codecrafters.taskhub.service.JobService;
-import com.codecrafters.taskhub.service.UserService;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,11 +38,14 @@ public class AnnouncePage extends AppCompatActivity {
             return insets;
         });
 
+        String userId = getIntent().getStringExtra("userId");
+
         EditText edtTitle = findViewById(R.id.edtTitle);
         EditText edtDescription = findViewById(R.id.edtDescription);
         EditText edtPrice = findViewById(R.id.edtPrice);
         EditText edtDate = findViewById(R.id.edtDate);
         EditText edtLocation = findViewById(R.id.edtLocation);
+        Button announceBtn = findViewById(R.id.btnAnunciar);
 
         edtDate.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
@@ -79,13 +82,13 @@ public class AnnouncePage extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                boolean isTitleilled = edtTitle.getText().toString().trim().isEmpty();
+                boolean isTitleFilled = edtTitle.getText().toString().trim().isEmpty();
                 boolean isDescriptionFilled = edtDescription.getText().toString().trim().isEmpty();
                 boolean isPriceFilled = edtPrice.getText().toString().trim().isEmpty();
                 boolean isDateFilled = edtDate.getText().toString().trim().isEmpty();
                 boolean isLocationFilled = edtLocation.getText().toString().trim().isEmpty();
 
-              //  button.setEnabled(!isNameFilled && !isStartFilled && !isFinishFilled);
+                announceBtn.setEnabled(!isTitleFilled && !isDescriptionFilled && !isPriceFilled && !isDateFilled && !isLocationFilled);
             }
 
             @Override
@@ -100,12 +103,14 @@ public class AnnouncePage extends AppCompatActivity {
          edtLocation.addTextChangedListener(textWatcher);
 
         JobService jobService = new JobService();
-        button.setOnClickListener((event) -> {
+        announceBtn.setOnClickListener((event) -> {
 
             Job jobNew = new Job();
             jobNew.setTitle(edtTitle.getText().toString());
             jobNew.setDetails(edtDescription.getText().toString());
+            jobNew.setImageUrl("NO IMAGE");
             jobNew.setPayment(Double.valueOf(edtPrice.getText().toString()));
+            jobNew.setCrafter(new User(userId));
             jobNew.setMoment(edtDate.getText().toString());
             jobNew.setAddress(edtLocation.getText().toString());
 
@@ -121,6 +126,7 @@ public class AnnouncePage extends AppCompatActivity {
 
                     Intent intent = new Intent(this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("userId", userId);
                     startActivity(intent);
                 } else {
                     Toast.makeText(getApplicationContext(), "A data do seu trabalho não pode ser anterior a data de agora!", Toast.LENGTH_LONG).show();
@@ -129,6 +135,13 @@ public class AnnouncePage extends AppCompatActivity {
             } catch (ParseException e) {
                 throw new RuntimeException(e);
             }
+        });
+
+        Button accountButton = findViewById(R.id.accountButton);
+        accountButton.setOnClickListener((e) -> {
+            Intent intent= new Intent(this, MyProfilePage.class);
+            intent.putExtra("userId", userId);
+            startActivity(intent);
         });
     }
 }

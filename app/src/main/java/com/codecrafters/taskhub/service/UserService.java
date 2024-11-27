@@ -7,6 +7,8 @@ import com.codecrafters.taskhub.request.users.FindByEmailUserRequest;
 import com.codecrafters.taskhub.request.users.FindByIdUserRequest;
 import com.codecrafters.taskhub.request.users.InsertUserRequest;
 import com.codecrafters.taskhub.request.users.LoginUserRequest;
+import com.codecrafters.taskhub.request.users.SubscribeUserRequest;
+import com.codecrafters.taskhub.request.users.UnsubscribeUserRequest;
 import com.codecrafters.taskhub.request.users.UpdateUserRequest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -72,6 +74,26 @@ public class UserService {
             UpdateUserRequest updateRequest = new UpdateUserRequest();
             return updateRequest.execute(id, objectMapper.writeValueAsString(user)).get();
         } catch (ExecutionException | InterruptedException | JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean subscribe(String userId, String jobId){
+        try {
+            SubscribeUserRequest subscribeUserRequest = new SubscribeUserRequest();
+            return subscribeUserRequest.execute(userId, jobId).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean unsubscribe(String userId, String jobId){
+        try {
+            UnsubscribeUserRequest unsubscribeUserRequest = new UnsubscribeUserRequest();
+            return unsubscribeUserRequest.execute(userId, jobId).get();
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return false;

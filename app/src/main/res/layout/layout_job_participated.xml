@@ -83,7 +83,6 @@
                     android:text="São Paulo, Itaquera"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
-
                 <TextView
                     android:id="@+id/jobPostedBy"
                     android:layout_width="match_parent"
@@ -104,9 +103,27 @@
                     android:text="Disponível"
                     android:textColor="@color/black"
                     android:textSize="15sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnUnsubscribe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="15dp"
+                    android:text="Desinscrever"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:backgroundTint="@color/red"
+                    style="@style/Button"/>
+
             </LinearLayout>
 
+
+
+
         </LinearLayout>
+
 
 
     </LinearLayout>
