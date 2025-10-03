@@ -53,14 +53,14 @@ public class MyProfilePage extends AppCompatActivity {
 
         Button btnShowJobs = findViewById(R.id.btnShowMyJobs);
         btnShowJobs.setOnClickListener((e) -> {
-            Intent intent= new Intent(this, MyJobs.class);
+            Intent intent= new Intent(this, MyJobsPage.class);
             intent.putExtra("userId", userId);
             startActivity(intent);
         });
 
         Button btnShowParticipatedJobs = findViewById(R.id.btnShowMyParticipatedJobs);
         btnShowParticipatedJobs.setOnClickListener((e) -> {
-            Intent intent= new Intent(this, ParticipatedJobs.class);
+            Intent intent= new Intent(this, ParticipatedJobsPage.class);
             intent.putExtra("userId", userId);
             startActivity(intent);
         });

@@ -131,11 +131,11 @@
 
                         <ImageView
                             android:id="@+id/imageJob"
-                            android:layout_width="120dp"
-                            android:layout_height="120dp"
+                            android:layout_width="220dp"
+                            android:layout_height="220dp"
                             android:layout_gravity="center"
                             android:layout_marginBottom="10dp"
-                            android:paddingHorizontal="20dp"
+                            android:rotation="90"
                             android:src="@drawable/imgicon" />
 
                         <TextView

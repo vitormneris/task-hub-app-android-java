@@ -21,9 +21,7 @@ import com.codecrafters.taskhub.domain.User;
 import com.codecrafters.taskhub.service.UserService;
 import com.squareup.picasso.Picasso;
 
-import java.util.Set;
-
-public class ParticipatedJobs extends AppCompatActivity {
+public class ParticipatedJobsPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +91,7 @@ public class ParticipatedJobs extends AppCompatActivity {
                 button.setOnClickListener((e) -> {
                     if (userService.unsubscribe(userId, job.getId())) {
                         Toast.makeText(getApplicationContext(), "Desinscrito com sucesso!", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(this, ParticipatedJobs.class);
+                        Intent intent = new Intent(this, ParticipatedJobsPage.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("userId", userId);
                         startActivity(intent);

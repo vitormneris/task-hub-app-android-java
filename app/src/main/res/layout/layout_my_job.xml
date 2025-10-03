@@ -131,7 +131,7 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:fontFamily="@font/lexend_medium"
-                android:backgroundTint="@color/yellow"
+                android:backgroundTint="@color/darkBlue"
                 style="@style/Button"/>
 
             <androidx.appcompat.widget.AppCompatButton

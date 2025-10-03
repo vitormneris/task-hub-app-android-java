@@ -152,12 +152,11 @@ public class AnnouncePage extends AppCompatActivity {
             }
 
             MediaManager.get().upload(imagePath)
-                    .option("folder", "userImage")  // Define a pasta para onde a imagem será enviada
+                    .option("folder", "userImage")
                     .callback(new UploadCallback() {
                         @Override
                         public void onStart(String requestId) {
                             Log.d(TAG, "Upload iniciado.");
-                            Toast.makeText(AnnouncePage.this, "Upload Iniciado.", Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -168,10 +167,7 @@ public class AnnouncePage extends AppCompatActivity {
                         @Override
                         public void onSuccess(String requestId, Map resultData) {
                             Log.d(TAG, "Upload concluído.");
-                            Toast.makeText(AnnouncePage.this, "Upload concluído.", Toast.LENGTH_SHORT).show();
                             String uploadedImageUrl = (String) resultData.get("secure_url");
-
-
                                 Job jobNew = new Job();
                                 jobNew.setTitle(edtTitle.getText().toString());
                                 jobNew.setDetails(edtDescription.getText().toString());
@@ -204,7 +200,7 @@ public class AnnouncePage extends AppCompatActivity {
                                 }
 
 
-                            Log.d(TAG, "URL da imagem: " + uploadedImageUrl); // A URL segura da imagem no Cloudinary
+                            Log.d(TAG, "URL da imagem: " + uploadedImageUrl);
                         }
 
                         @Override

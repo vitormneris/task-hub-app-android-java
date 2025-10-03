@@ -40,7 +40,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditJob extends AppCompatActivity {
+public class EditJobPage extends AppCompatActivity {
     private static final String TAG = "Upload ###";
 
     private Uri imagePath;
@@ -163,7 +163,7 @@ public class EditJob extends AppCompatActivity {
                             @Override
                             public void onStart(String requestId) {
                                 Log.d(TAG, "Upload iniciado.");
-                                Toast.makeText(EditJob.this, "Upload Iniciado.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EditJobPage.this, "Upload Iniciado.", Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
@@ -174,7 +174,7 @@ public class EditJob extends AppCompatActivity {
                             @Override
                             public void onSuccess(String requestId, Map resultData) {
                                 Log.d(TAG, "Upload concluído.");
-                                Toast.makeText(EditJob.this, "Upload concluído.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EditJobPage.this, "Upload concluído.", Toast.LENGTH_SHORT).show();
                                 String uploadedImageUrl = (String) resultData.get("secure_url");
 
                                 Job jobNew = new Job();
@@ -195,7 +195,7 @@ public class EditJob extends AppCompatActivity {
                                         if (jobService.update(jobId, jobNew)) Toast.makeText(getApplicationContext(), "Trabalho atualizado com sucesso!", Toast.LENGTH_LONG).show();
                                         else Toast.makeText(getApplicationContext(), "Não há conexão com a internet!", Toast.LENGTH_LONG).show();
 
-                                        Intent intent = new Intent(EditJob.this, MainActivity.class);
+                                        Intent intent = new Intent(EditJobPage.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.putExtra("userId", userId);
                                         startActivity(intent);
@@ -212,13 +212,13 @@ public class EditJob extends AppCompatActivity {
                             @Override
                             public void onError(String requestId, ErrorInfo error) {
                                 Log.e(TAG, "Erro: " + error.getDescription());
-                                Toast.makeText(EditJob.this, "Erro: " + error.getDescription(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EditJobPage.this, "Erro: " + error.getDescription(), Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
                             public void onReschedule(String requestId, ErrorInfo error) {
                                 Log.d(TAG, "Reagendado: " + error.getDescription());
-                                Toast.makeText(EditJob.this, "Reagendado: " + error.getDescription(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(EditJobPage.this, "Reagendado: " + error.getDescription(), Toast.LENGTH_SHORT).show();
                             }
                         }).dispatch();
 
@@ -240,7 +240,7 @@ public class EditJob extends AppCompatActivity {
                         if (jobService.update(jobId, jobNew)) Toast.makeText(getApplicationContext(), "Trabalho atualizado com sucesso!", Toast.LENGTH_LONG).show();
                         else Toast.makeText(getApplicationContext(), "Não há conexão com a internet!", Toast.LENGTH_LONG).show();
 
-                        Intent intent = new Intent(EditJob.this, MyJobs.class);
+                        Intent intent = new Intent(EditJobPage.this, MyJobsPage.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("userId", userId);
                         startActivity(intent);

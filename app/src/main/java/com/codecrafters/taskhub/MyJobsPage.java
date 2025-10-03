@@ -23,7 +23,7 @@ import com.codecrafters.taskhub.service.JobService;
 import com.codecrafters.taskhub.service.UserService;
 import com.squareup.picasso.Picasso;
 
-public class MyJobs extends AppCompatActivity {
+public class MyJobsPage extends AppCompatActivity {
     private int count = 0;
 
     @Override
@@ -111,7 +111,7 @@ public class MyJobs extends AppCompatActivity {
                 Picasso.get().load(job.getImageUrl()).into(imageJob);
 
                 cardView.setOnClickListener((e) -> {
-                    Intent intent= new Intent(this, EditJob.class);
+                    Intent intent= new Intent(this, EditJobPage.class);
                     intent.putExtra("userId", userId);
                     intent.putExtra("jobId", job.getId());
                     startActivity(intent);
@@ -121,7 +121,7 @@ public class MyJobs extends AppCompatActivity {
                 btnAvailable.setOnClickListener((e) -> {
                     if (jobService.updateAvailable(job.getId())) {
                         Toast.makeText(getApplicationContext(), "Atualizado com sucesso!", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(this, MyJobs.class);
+                        Intent intent = new Intent(this, MyJobsPage.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.putExtra("userId", userId);
                         startActivity(intent);

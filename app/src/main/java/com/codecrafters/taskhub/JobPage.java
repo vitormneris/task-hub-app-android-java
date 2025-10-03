@@ -14,7 +14,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.codecrafters.taskhub.domain.Job;
-import com.codecrafters.taskhub.domain.User;
 import com.codecrafters.taskhub.service.JobService;
 import com.codecrafters.taskhub.service.UserService;
 import com.squareup.picasso.Picasso;
